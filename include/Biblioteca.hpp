@@ -3,11 +3,15 @@
 
 #include <vector>
 #include "Libro.hpp"
+#include "Usuario.hpp"
+
 using namespace std;
 
 class Biblioteca {
 private:
     vector<Libro> libros;
+    vector<Usuario> usuariosRegistrados;
+
     
     string nombre;
     string direccion;
@@ -40,10 +44,13 @@ public:
     void setHorario(const string& hor);
     void setCapacidad(int cap);
 
+    void getUsuariosRegistrados();
+
     // Métodos
     void agregarLibro(const Libro& libro);
     void mostrarLibros() const;
     Libro obtenerLibro(int index) const;
+    void registrarUsuario(const Usuario& usuario);
 };
 
 #endif

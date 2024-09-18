@@ -1,12 +1,24 @@
 #include "Usuario.hpp"
 #include <iostream>
 
-Usuario::Usuario(string n, int id, string dir, string tel, string mail)
-    : nombre(n), idUsuario(id), direccion(dir), telefono(tel), email(mail), libroPrestado("", "", "", 0, "", 0) {}
+Usuario::Usuario(){
 
-Usuario::Usuario(string n, int id) : nombre(n), idUsuario(id), direccion(""), telefono(""), email(""), libroPrestado("", "", "", 0, "", 0) {}
+}
+    
 
-Usuario::Usuario() : nombre(""), idUsuario(0), direccion(""), telefono(""), email(""), libroPrestado("", "", "", 0, "", 0) {}
+Usuario::Usuario(string nombre, int idUsuario) {
+    this->nombre = nombre;
+    this->idUsuario = idUsuario;
+}
+
+Usuario::Usuario(string nombre, int idUsuario, string direccion, string telefono, string email){
+    this->nombre = nombre;
+    this->idUsuario = idUsuario;
+    this->direccion = direccion;
+    this->telefono = telefono;
+    this->email = email;
+
+}
 
 string Usuario::getNombre() const { return nombre; }
 int Usuario::getIdUsuario() const { return idUsuario; }
@@ -23,7 +35,7 @@ void Usuario::setEmail(const string &mail) { email = mail; }
 void Usuario::setLibroPrestado(const Libro &libro) { libroPrestado = libro; }
 
 void Usuario::pedirPrestado(Libro libro)
-{
+{    
     libroPrestado = libro;
     cout << nombre << " ha solicitado el libro: " << libro.getTitulo() << "\n";
 }

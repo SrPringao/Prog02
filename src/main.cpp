@@ -15,8 +15,17 @@ int main()
     // Mostrar libros
     biblioteca.mostrarLibros();
 
+    
+    // Registrar usuario
+    biblioteca.registrarUsuario(usuario);
+
     // Usuario pide prestado un libro
     usuario.pedirPrestado(biblioteca.obtenerLibro(1));
+
+    // Mostrar usuarios registrados
+    biblioteca.getUsuariosRegistrados();
+
+    
 
     return 0;
 }

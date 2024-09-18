@@ -1,12 +1,26 @@
 #include "Libro.hpp"
 #include <iostream>
 
-Libro::Libro(string t, string a, string e, int anio, string i, int paginas)
-    : titulo(t), autor(a), editorial(e), anioPublicacion(anio), isbn(i), numPaginas(paginas) {}
+Libro::Libro(){
 
-Libro::Libro(string t, string a) : titulo(t), autor(a), editorial(""), anioPublicacion(0), isbn(""), numPaginas(0) {}
+}
 
-Libro::Libro() : titulo(""), autor(""), editorial(""), anioPublicacion(0), isbn(""), numPaginas(0) {}
+Libro::Libro(string titulo, string autor){
+    this->titulo = titulo;
+    this->autor = autor;
+}
+
+Libro::Libro(string titulo, string autor, string editorial, int anioPublicacion, string isbn, int numPaginas) {
+    this->titulo = titulo;
+    this->autor = autor;
+    this->editorial = editorial;
+    this->anioPublicacion = anioPublicacion;
+    this->isbn = isbn;
+    this->numPaginas = numPaginas;
+}
+  
+
+
 
 string Libro::getTitulo() const { return titulo; }
 string Libro::getAutor() const { return autor; }
