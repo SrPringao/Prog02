@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug C++ Project",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/main", // Ruta al ejecutable
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Build C++ project", // Nombre de la tarea de compilación
+            "miDebuggerPath": "C:/TDM-GCC-64/gdb64/bin/gdb.exe", // Ruta correcta en Windows
+            "internalConsoleOptions": "openOnSessionStart",
+            "logging": {
+                "engine": false
+            }
+        }
+    ]
+}
